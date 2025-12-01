@@ -1,0 +1,81 @@
+name: artsvault
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+  firebase_auth: ^5.3.4
+  firebase_core: ^3.9.0
+  cloud_firestore: ^5.3.0
+  firebase_database: ^11.2.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^4.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/melayu.jpg
+    - assets/melayu2.jpg
+    - assets/bidayuh.jpg
+    - assets/bidayuh2.jpg
+    - assets/iban.jpg
+    - assets/iban2.jpg
+    - assets/melanau.jpg
+    - assets/melanau2.jpg
+    - assets/orangUlu.jpg
+    - assets/orangUlu2.jpg
+    - assets/kadazan.jpg
+    - assets/kadazan2.jpg
+    - assets/menu.png
+    - assets/search.png
+    - assets/filter.png
+    - assets/man.png
+    - assets/woman.png
+    - assets/all.png
+    - assets/orderTrack.png
+    - assets/privacyPolicy.png
+    - assets/payment.png
+    - assets/profile.png
+    - assets/person.png
+    - assets/cart.png
+    - assets/app-icon.png
+    - assets/artsvault-logo.png
+    - assets/unimas-logo.png
+    - assets/close.png
+    - assets/loginpage-icon.png
+    - assets/Qr.jpg
+
+
+

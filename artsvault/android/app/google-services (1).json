@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "213593499729",
+    "project_id": "demo3-31a30",
+    "storage_bucket": "demo3-31a30.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213593499729:android:c0eb3c6ff418ff247e7070",
+        "android_client_info": {
+          "package_name": "com.example.artsvault"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA75Nbp_1-RzWg11JAE-i___JSsYjEgc2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
