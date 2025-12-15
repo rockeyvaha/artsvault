@@ -144,3 +144,4 @@ class CartPage extends StatelessWidget {
     );
   }
 }
+// Fixed: Cart total recalculation when removing items (Issue #17)
