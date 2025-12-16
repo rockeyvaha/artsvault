@@ -13,7 +13,7 @@ class PaymentPage extends StatefulWidget {
 }
 
 class _PaymentPageState extends State<PaymentPage> {
-  int _selectedPaymentMethod = 1; // Default to Scan QR Pay (1)
+  int _selectedPaymentMethod = 1;  // 1 = QR Pay // 2 = Card Payment (Simulated)
 
   @override
   Widget build(BuildContext context) {
@@ -88,6 +88,19 @@ class _PaymentPageState extends State<PaymentPage> {
                 ],
               ),
             ),
+            ListTile(
+              leading: const Icon(Icons.credit_card, color: Colors.blue),
+              title: const Text('Card Payment'),
+              trailing: Radio(
+              value: 2,
+              groupValue: _selectedPaymentMethod,
+              onChanged: (int? value) {
+              setState(() {
+                _selectedPaymentMethod = value!;
+                });
+               },
+            ),
+          ),
             const Spacer(),
             // Total (RM) section aligned to the right
             Row(
@@ -111,35 +124,47 @@ class _PaymentPageState extends State<PaymentPage> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {
-                if (_selectedPaymentMethod == 1) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const ScanQrPage()),
-                  );
-                } else {
-                  showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                      title: const Text('Confirm Payment'),
-                      content: const Text('You have chosen to pay with cash.'),
-                      actions: [
-                        TextButton(
-                          onPressed: () => Navigator.pop(context),
-                          child: const Text('Cancel'),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                            // Add cash payment handling logic here
-                          },
-                          child: const Text('Confirm'),
-                        ),
-                      ],
-                    ),
-                  );
-                }
-              },
+             onPressed: () {
+  // Major change: Refactored payment module to support multiple payment methods
+  if (_selectedPaymentMethod == 1) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ScanQrPage()),
+    );
+  } else if (_selectedPaymentMethod == 2) {
+    // Card payment simulation
+    showDialog(
+      context: context,
+      builder: (_) => const AlertDialog(
+        title: Text('Card Payment'),
+        content: Text('Card payment processing simulation.'),
+      ),
+    );
+  } else {
+    // Cash payment
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Confirm Payment'),
+        content: const Text('You have chosen to pay with cash.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+              // Add cash payment handling logic here
+            },
+            child: const Text('Confirm'),
+          ),
+        ],
+      ),
+    );
+  }
+},
+
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xffF7DC6F), // Custom yellow color
                 minimumSize: const Size(327, 50), // Button size unchanged
