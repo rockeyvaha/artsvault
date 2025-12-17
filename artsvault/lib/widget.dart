@@ -494,6 +494,15 @@ class SideMenuWidget extends StatelessWidget {
               );
             },
           ),
+          // Added Help & FAQ Button (Feature)
+          ListTile(
+            leading: const Icon(Icons.help_outline, size: 24),
+            title: const Text('Help & FAQ'),
+            onTap: () {
+              Navigator.pop(context);
+              // Navigation to HelpPage logic here
+            },
+          ),
           ListTile(
             leading: Image.asset('assets/payment.png', height: 24, width: 24),
             title: const Text('Payment'),
